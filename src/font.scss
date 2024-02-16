@@ -1,0 +1,20 @@
+@import './color.scss';
+
+@mixin __font($size, $weight, $color, $align) {
+  color: $color;
+  font-size: $size;
+  text-align: $align;
+  font-weight: $weight;
+  vertical-align: baseline;
+}
+
+@mixin font-roboto($size, $weight, $color: black, $align: start) {
+  @include __font($size, $weight, $color, $align);
+  font-family: "Roboto", sans-serif;
+}
+
+@mixin font-sans-serife($size, $weight, $color: black, $align: start) {
+  @include __font($size, $weight, $color, $align);
+  font-family: 'Pt Sans', sans-serif;
+}
+
