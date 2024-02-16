@@ -1,0 +1,20 @@
+@import '../../../color.scss';
+@import '../../../font.scss';
+
+.button {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    transition: .25s;
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: $cyan;
+    text-transform: uppercase;
+    border: 1px solid $gray-600;
+    @include font-sans-serife(clamp(8px, 3em, 12px), 700, $black);
+}
+
+.button[disabled] {
+    color: $white;
+    background-color: $gray-600;
+}
