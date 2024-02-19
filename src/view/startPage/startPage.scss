@@ -1,5 +1,10 @@
 @import '../../color.scss';
 
+#root {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .form {
     gap: 10px;
     display: flex;

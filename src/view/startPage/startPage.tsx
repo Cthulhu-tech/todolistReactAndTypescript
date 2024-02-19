@@ -17,8 +17,7 @@ const StartPage = () => {
 
     const inputValueHandler: InputHandlerType = (
             event: React.ChangeEvent<HTMLInputElement>
-        ) => dispatch(updateValue(event.target.value));
-
+        ) => void dispatch(updateValue(event.target.value));
 
     const actionHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -34,6 +33,7 @@ const StartPage = () => {
         <form className="form" onSubmit={actionHandler}>
             <div className="form__input">
                 <InputForm
+                    name="user_login"
                     placeHolder="You name"
                     title={`You name: ${value}`}
                     inputValueHandler={inputValueHandler}
