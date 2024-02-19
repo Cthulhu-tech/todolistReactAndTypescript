@@ -1,20 +1,25 @@
+import { NoDataComponent } from "../../components/preloaderComponentsGroup/NoDataComponent/NoDataComponent";
+import { AsideComponent } from "../../components/asideComponent/asideComponent";
+import { Await, Outlet, useLoaderData } from "react-router-dom";
 import { TodoType } from "../../store/slices/todoSlice/type";
-import { StoreType } from "../../store/type";
-import { useSelector } from "react-redux";
-import { Outlet } from "react-router"
+import './todoPage.scss';
 
 const TodoPage = () => {
 
-    const value = useSelector<StoreType, TodoType[]>((state) => state.todoDataStore.data);
+    const data = useLoaderData() as {data: TodoType[]};
 
-    return <main>
-        <aside>
-            aside
-        </aside>
-        <section className="wrapper-todo">
-            <Outlet/>
-        </section>
-    </main>
+    return <Await
+        resolve={data.data}
+        errorElement={<NoDataComponent message="Error" />}
+    >{(data) => <>
+        <AsideComponent data={data}/>
+        <main className="main">
+            <section className="wrapper-todo">
+                <Outlet/>
+            </section>
+        </main>
+    </>}
+    </Await>
 }
 
 export default TodoPage;

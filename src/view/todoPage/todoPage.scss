@@ -1,0 +1,20 @@
+#root {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(50px, 300px) minmax(100px, 1fr);
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wrapper-todo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
