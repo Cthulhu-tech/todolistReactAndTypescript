@@ -6,9 +6,10 @@ import { ErrorPage } from "../view/errorPage/ErrorPage";
 import { createBrowserRouter } from "react-router-dom";
 import { Suspense, lazy } from "react";
 
-import { startPageType, todoPageType, todoSelectType } from "./type";
+import { startPageType, todoPageType, todoSelectType, todoUpdateType } from "./type";
 
-const TodoSelect = lazy(() => promiseComponentFunction<todoSelectType>(import('../components/selectTodo/selectTodo')));
+const TodoSelect = lazy(() => promiseComponentFunction<todoSelectType>(import('../components/todoComponentsGroup/selectTodo/selectTodo')));
+const TodoUpdate = lazy(() => promiseComponentFunction<todoUpdateType>(import('../components/todoComponentsGroup/updateTodo/updateTodo')));
 const StartPage = lazy(() => promiseComponentFunction<startPageType>(import('../view/startPage/startPage')));
 const TodoPage = lazy(() => promiseComponentFunction<todoPageType>(import('../view/todoPage/todoPage')));
 
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
     },
     {
       path: "todo",
+      loader: todoLoader,
       element: <AccessComponent>
           <Suspense fallback={<Loading/>}>
             <TodoPage/>
@@ -33,7 +35,13 @@ export const router = createBrowserRouter([
           path: ":id",
           element: <Suspense fallback={<Loading/>}>
             <TodoSelect/>
-          </Suspense>
+          </Suspense>,
+        },
+        {
+          path: "update",
+          element: <Suspense fallback={<Loading/>}>
+            <TodoUpdate/>
+          </Suspense>,
         },
       ],
     },
