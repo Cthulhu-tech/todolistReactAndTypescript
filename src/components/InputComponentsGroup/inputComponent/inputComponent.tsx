@@ -13,6 +13,7 @@ export const InputForm = (props: InputType) => {
             value={props.value}
             onChange={props.inputValueHandler}
             placeholder={props.placeHolder}
+            name={props.name}
         />
     </div>
 }

@@ -1,0 +1,16 @@
+@import '../../../color.scss';
+@import '../../../font.scss';
+
+.no-data {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-data__text {
+    width: 100%;
+    display: block;
+    @include font-roboto(clamp(14px, 5em, 20px), 400, $black,center);
+}
