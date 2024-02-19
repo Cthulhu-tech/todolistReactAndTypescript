@@ -1,0 +1,12 @@
+.aside {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    overflow-y: auto;
+    padding: 5px 10px;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-x: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+}
