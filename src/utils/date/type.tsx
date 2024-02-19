@@ -1,0 +1,1 @@
+export type CustomDateType = string | number | Date
