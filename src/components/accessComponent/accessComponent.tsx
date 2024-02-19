@@ -6,7 +6,6 @@ import { Navigate } from "react-router";
 export const AccessComponent = ({ children }: childrenElementType) => {
 
     const value = useSelector<StoreType, string>((state) => state.inputDataUserName.name);
-
     if(!value.length) {
         return <Navigate replace to="/" />
     }
