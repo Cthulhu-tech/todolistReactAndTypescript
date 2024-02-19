@@ -8,5 +8,5 @@ export type ActionType<T> = {
 
 export type StoreType = {
     inputDataUserName: FormSliceType;
-    todoDataStore: TodoListType<TodoType[]>;
+    todoDataStore: TodoListType<TodoType>;
 }
