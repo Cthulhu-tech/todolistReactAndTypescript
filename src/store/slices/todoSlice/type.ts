@@ -1,10 +1,12 @@
 export type TodoType = {
+    checked: boolean;
     message: string;
-    time: string;
+    time: number;
     title: string;
     id: number;
 };
 
 export type TodoListType<T> = {
-    data: T;
+    data: T[] | null;
+    select: T | undefined;
 };
