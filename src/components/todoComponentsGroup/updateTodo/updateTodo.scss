@@ -1,0 +1,19 @@
+.todo-update {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: clamp(100px, 100%, 400px);
+}
+
+.wrapper-date-picker {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-select-data {
+    align-items: center;
+    justify-content: center;
+}
